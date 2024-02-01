@@ -5,16 +5,15 @@ export function LayoutContainer({ layout }: { layout: (Field | Section)[] }) {
   return (
     <>
       {layout.map((l) => {
-        if (l.title != undefined) {
-          const s = l as Section;
+        if ("title" in l) {
           return (
             <fieldset
-              className={`grid grid-cols-${s.columns} ${
-                s.lessSpacing !== true ? "gap-4 lg:gap-8 m-5 p-2" : ""
-              }  ${s.hasBorder ? "border" : ""} `}
+              className={`grid grid-cols-${l.columns} ${
+                l.lessSpacing !== true ? "gap-4 lg:gap-8 m-5 p-2" : ""
+              }  ${l.hasBorder ? "border" : ""} `}
             >
-              <legend className="uppercase">{s.title}</legend>
-              <LayoutContainer layout={s.fields} />
+              <legend className="uppercase">{l.title}</legend>
+              <LayoutContainer layout={l.fields} />
             </fieldset>
           );
         } else {

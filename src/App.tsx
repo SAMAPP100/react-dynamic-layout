@@ -2,7 +2,7 @@
 // import { useState } from "react";
 // import "./App.css";
 import ReactJSONEditor from "react-jsoneditor-wrapper";
-import { LayoutContainer } from "./components/Layput";
+import { LayoutContainer } from "./components/Layout";
 import { useState } from "react";
 import { opt } from "./json";
 
