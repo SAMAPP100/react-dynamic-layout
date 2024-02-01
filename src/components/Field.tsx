@@ -4,7 +4,7 @@ export const FieldComponent = ({
   editable,
   label,
   labelPosition,
-  name,
+  //name,
   value,
 }: Field) => {
   return (
