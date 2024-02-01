@@ -14,16 +14,11 @@ function App() {
       <div>
         {" "}
         <ReactJSONEditor
-          onChangeText={(v: string) => setState(JSON.parse(v))}
-          className="h-4/5"
+          onChangeText={(v: string): void => setState(JSON.parse(v))}
           json={state}
           name="properties"
           mode="code"
-          // onChange={() => console.log(getJson())}
-
-          // ref={(ref) => (jsoneditorref = ref)}
         />
-        {/* <textarea className="border w-full h-4/5" /> */}
       </div>
       <div>
         <LayoutContainer layout={state} />
