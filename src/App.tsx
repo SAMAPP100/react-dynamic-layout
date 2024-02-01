@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // import { useState } from "react";
 // import "./App.css";
 import ReactJSONEditor from "react-jsoneditor-wrapper";
@@ -14,7 +15,8 @@ function App() {
       <div>
         {" "}
         <ReactJSONEditor
-          onChangeText={(v: string): void => setState(JSON.parse(v))}
+          //@ts-expect-error not provided properly by package
+          onChangeText={(props: any): void => setState(JSON.parse(props))}
           json={state}
           name="properties"
           mode="code"
