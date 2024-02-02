@@ -1,4 +1,5 @@
 import { Field } from "../Layout.types";
+import { Label } from "./ui/label";
 
 export const FieldComponent = ({
   editable,
@@ -8,13 +9,10 @@ export const FieldComponent = ({
   value,
 }: Field) => {
   return (
-    // <div className="grid grid-cols-2 gap-2">
-    <div className="p-4">
-      <label
-        className={`${labelPosition === "above" ? "block" : ""} font-bold pr-3`}
-      >
-        {label}
-      </label>
+    <div className="p-4 pb-0">
+      <Label className={`${labelPosition === "above" ? "block" : "pr-3"}`}>
+        {label}:
+      </Label>
       <p className="inline-block pr-3">{value}</p>
       {editable === true && (
         <svg
@@ -33,6 +31,5 @@ export const FieldComponent = ({
         </svg>
       )}
     </div>
-    // </div>
   );
 };
