@@ -2,7 +2,7 @@
 // import { useState } from "react";
 // import "./App.css";
 import ReactJSONEditor from "react-jsoneditor-wrapper";
-import { LayoutContainer } from "./components/Layout";
+import { Layout } from "./components/Layout";
 import { useState } from "react";
 import { opt } from "./json";
 import {
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="grid grid-cols-1 h-screen">
       <div>
-        <LayoutContainer layout={state} />
+        <Layout layout={state} />
       </div>
 
       <Drawer closeThreshold={1} modal={false}>

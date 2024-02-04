@@ -1,21 +1,16 @@
-import { Field, Section } from "../Layout.types";
+import { Field, Section, Tabs } from "../Layout.types";
 import { FieldComponent } from "./Field";
+import LayoutContainer from "./LayoutContainer";
+import TabsLayout from "./TabsLayout";
 
-export function LayoutContainer({ layout }: { layout: (Field | Section)[] }) {
+export function Layout({ layout }: { layout: (Field | Section | Tabs)[] }) {
   return (
     <>
       {layout.map((l) => {
         if ("title" in l) {
-          return (
-            <fieldset
-              className={`grid grid-cols-${l.columns} ${
-                l.lessSpacing !== true ? "gap-4 lg:gap-8 m-5 p-2" : ""
-              }  ${l.hasBorder ? "border" : ""} `}
-            >
-              <legend className="uppercase">{l.title}</legend>
-              <LayoutContainer layout={l.fields} />
-            </fieldset>
-          );
+          return <LayoutContainer container={l} />;
+        } else if ("tabs" in l) {
+          return <TabsLayout tabs={l} />;
         } else {
           l = l as Field;
           return <FieldComponent {...l} />;
