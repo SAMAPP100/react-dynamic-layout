@@ -15,10 +15,10 @@ export const opt: Section[] = [
         fields: [
           {
             name: "FirstChildField",
-            label: "First Field",
+            label: "Label",
             editable: true,
             labelPosition: "left",
-            value: "Somthing",
+            value: "Value",
           },
           {
             name: "SeconfChildField",
