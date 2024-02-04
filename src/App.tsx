@@ -24,7 +24,7 @@ function App() {
         <LayoutContainer layout={state} />
       </div>
 
-      <Drawer modal={false}>
+      <Drawer closeThreshold={1} modal={false}>
         <DrawerTrigger className="absolute bottom-5 right-5">
           <Button>Open editor</Button>
         </DrawerTrigger>
